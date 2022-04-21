@@ -10,7 +10,7 @@ Demo:
 
 ```tsx
 import React from 'react';
-import { Foo } from 'dumi-template';
+import { Foo } from '@sh/dumi-template';
 
 export default () => <Foo title="First Demo" />;
 ```

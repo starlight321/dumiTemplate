@@ -1,7 +1,7 @@
 {
-  "private": true,
-  "name": "dumi-template",
-  "version": "1.0.0",
+  "private": false,
+  "name": "@sh/dumi-template",
+  "version": "1.0.15",
   "scripts": {
     "start": "dumi dev",
     "docs:build": "dumi build",
@@ -16,13 +16,9 @@
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "typings": "dist/index.d.ts",
+  "files": ["dist"],
   "gitHooks": {
     "pre-commit": "lint-staged"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/umijs/dumi-template",
-    "branch": "main"
   },
   "lint-staged": {
     "*.{js,jsx,less,md,json}": [
@@ -32,7 +28,7 @@
       "prettier --parser=typescript --write"
     ]
   },
-  "dependencies": {
+  "peerDependencies": {
     "react": "^16.12.0"
   },
   "devDependencies": {

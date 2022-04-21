@@ -1,6 +1,7 @@
 import { defineConfig } from 'dumi';
+const path = require('path');
 
-const repo = 'dumi-template';
+const repo = '@sh/dumi-template';
 
 export default defineConfig({
   title: repo,
@@ -18,8 +19,12 @@ export default defineConfig({
     null,
     {
       title: 'GitHub',
-      path: 'https://github.com/umijs/dumi-template',
+      path: 'https://github.com/umijs/@sh/dumi-template',
     },
   ],
+  chainWebpack(memo) {
+    // 设置 alias
+    memo.resolve.alias.set(repo, path.resolve(__dirname, 'src', 'components'));
+  },
   // more config: https://d.umijs.org/config
 });
