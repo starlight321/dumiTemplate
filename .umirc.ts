@@ -1,7 +1,7 @@
 import { defineConfig } from 'dumi';
-const path = require('path');
+// const path = require('path');
 
-const repo = '@sh/dumi-template';
+const repo = '@sh/test';
 
 export default defineConfig({
   title: repo,
@@ -13,8 +13,8 @@ export default defineConfig({
   mode: 'site',
   hash: true,
   // Because of using GitHub Pages
-  base: `/${repo}/`,
-  publicPath: `/${repo}/`,
+  // base: `/${repo}/`,
+  // publicPath: `/${repo}/`,
   navs: [
     null,
     {
@@ -22,9 +22,39 @@ export default defineConfig({
       path: 'https://github.com/umijs/@sh/dumi-template',
     },
   ],
-  chainWebpack(memo) {
-    // 设置 alias
-    memo.resolve.alias.set(repo, path.resolve(__dirname, 'src', 'components'));
+  menus: {
+    '/': [
+      {
+        title: 'Home',
+        path: 'index',
+      },
+    ],
+    // 需要自定义侧边菜单的路径，没有配置的路径还是会使用自动生成的配置
+    '/components': [
+      {
+        title: 'Foo',
+        path: '/components/Foo',
+      },
+      {
+        title: 'Img',
+        path: '/components/img',
+      },
+    ],
   },
+  lessLoader: { javascriptEnabled: true },
+  extraBabelPlugins: [
+    [
+      'babel-plugin-import',
+      {
+        libraryName: 'antd',
+        libraryDirectory: 'es',
+        style: true,
+      },
+    ],
+  ],
+  // chainWebpack(memo) {
+  //   // 设置 alias
+  //   memo.resolve.alias.set(repo, path.resolve(__dirname, 'src', 'components'));
+  // },
   // more config: https://d.umijs.org/config
 });
