@@ -43,6 +43,16 @@ export default defineConfig({
   },
   lessLoader: { javascriptEnabled: true },
   dynamicImportSyntax: {},
+  extraBabelPlugins: [
+    [
+      'babel-plugin-import',
+      {
+        libraryName: 'antd',
+        libraryDirectory: 'es',
+        style: true,
+      },
+    ],
+  ],
   // chainWebpack(memo) {
   //   // 设置 alias
   //   memo.resolve.alias.set(repo, path.resolve(__dirname, 'src', 'components'));
