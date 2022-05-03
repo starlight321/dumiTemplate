@@ -1,6 +1,6 @@
 import React, { memo, useState } from 'react';
 import { Modal } from 'antd';
-import styles from './index.less';
+import './index.less';
 
 interface ImgProps {
   imgUrl: string;
@@ -13,11 +13,7 @@ export default memo((props: ImgProps) => {
   const [showImg, setShowImg] = useState(false);
   return (
     <div style={style} className={className}>
-      <img
-        className={styles.smallImg}
-        src={imgUrl}
-        onClick={() => setShowImg(true)}
-      />
+      <img className="smallImg" src={imgUrl} onClick={() => setShowImg(true)} />
 
       <Modal
         title="图片预览"
@@ -25,7 +21,7 @@ export default memo((props: ImgProps) => {
         onCancel={() => setShowImg(false)}
         footer={null}
       >
-        <img className={styles.previewImg} src={imgUrl} alt="预览图片" />
+        <img className="previewImg" src={imgUrl} alt="预览图片" />
       </Modal>
     </div>
   );

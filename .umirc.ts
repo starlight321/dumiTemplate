@@ -42,16 +42,7 @@ export default defineConfig({
     ],
   },
   lessLoader: { javascriptEnabled: true },
-  extraBabelPlugins: [
-    [
-      'babel-plugin-import',
-      {
-        libraryName: 'antd',
-        libraryDirectory: 'es',
-        style: true,
-      },
-    ],
-  ],
+  dynamicImportSyntax: {},
   // chainWebpack(memo) {
   //   // 设置 alias
   //   memo.resolve.alias.set(repo, path.resolve(__dirname, 'src', 'components'));
