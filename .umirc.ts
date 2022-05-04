@@ -13,8 +13,14 @@ export default defineConfig({
   mode: 'site',
   hash: true,
   // Because of using GitHub Pages
-  // base: `/${repo}/`,
-  // publicPath: `/${repo}/`,
+  base: `/${repo}/`,
+  publicPath: `/${repo}/`,
+  alias: {
+    '@sh/test': process.cwd() + '/src',
+  },
+  dynamicImport: {},
+  postcssLoader: {},
+  fastRefresh: {},
   navs: [
     null,
     {
@@ -33,16 +39,18 @@ export default defineConfig({
     '/components': [
       {
         title: 'Foo',
-        path: '/components/Foo',
+        path: '/components/foo',
       },
       {
         title: 'Img',
         path: '/components/img',
       },
+      {
+        title: 'Avatar',
+        path: '/components/avatar',
+      },
     ],
   },
-  lessLoader: { javascriptEnabled: true },
-  dynamicImportSyntax: {},
   extraBabelPlugins: [
     [
       'babel-plugin-import',
@@ -51,8 +59,14 @@ export default defineConfig({
         libraryDirectory: 'es',
         style: true,
       },
+      'antd',
     ],
   ],
+  themeConfig: {
+    hd: {
+      rules: [],
+    },
+  },
   // chainWebpack(memo) {
   //   // 设置 alias
   //   memo.resolve.alias.set(repo, path.resolve(__dirname, 'src', 'components'));

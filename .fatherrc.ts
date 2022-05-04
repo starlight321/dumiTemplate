@@ -1,20 +1,10 @@
 export default {
   target: 'browser',
   entry: 'src/index.ts',
-  esm: 'babel',
   cjs: 'babel',
-  extractCSS: false,
+  esm: { type: 'babel', importLibToEs: true },
   runtimeHelpers: true,
-  extraBabelPlugins: [
-    [
-      'babel-plugin-import',
-      {
-        libraryName: 'antd',
-        libraryDirectory: 'es',
-        style: true,
-      },
-    ],
-  ],
+  lessInBabelMode: true,
   autoprefixer: {
     browsers: ['ie>9', 'Safari >= 6'],
   },

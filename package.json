@@ -1,7 +1,7 @@
 {
   "private": false,
   "name": "@sh/test",
-  "version": "1.0.24",
+  "version": "1.0.25",
   "scripts": {
     "start": "dumi dev",
     "docs:build": "dumi build",
@@ -43,10 +43,12 @@
   },
   "devDependencies": {
     "@umijs/test": "^3.0.5",
-    "antd": "^4.20.2",
+    "@umijs/plugin-antd": "^0.15.0",
+    "@umijs/plugin-antd-mobile": "^1.2.0",
     "babel-plugin-import": "^1.13.5",
     "cross-env": "^7.0.3",
     "dumi": "^1.1.0",
+    "dumi-theme-mobile": "^1.1.21",
     "father-build": "^1.19.1",
     "gh-pages": "^3.0.0",
     "lint-staged": "^10.0.7",

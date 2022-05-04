@@ -27,8 +27,10 @@
     "skipLibCheck": true,
     "paths": {
       "@/*": ["src/*"],
-      "@@/*": ["src/.umi/*"],
-      "@@@/*": ["docs/*"]
+      "@sh/test": ["src/index.ts"],
+      "@sh/test/components": ["src/index.ts"],
+      "@sh/test/src/*": ["src/*"],
+      "@sh/test/es/*": ["src/*"]
     },
     "allowSyntheticDefaultImports": true,
     "typeRoots": ["typings", "node_modules/@types"]
